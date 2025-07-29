@@ -33,31 +33,6 @@ A comprehensive Next.js web application that analyzes password strength and gene
 - **File Export:** Browser download API
 - **Pattern Generation:** Custom algorithms
 
-## Project Structure
-
-```
-project/
-├── README.md
-├── package.json
-├── next.config.js
-├── tailwind.config.js
-├── src/
-│   ├── app/
-│   │   ├── layout.js
-│   │   ├── page.js
-│   │   └── globals.css
-│   ├── components/
-│   │   ├── PasswordAnalyzer.js
-│   │   ├── WordlistGenerator.js
-│   │   └── ExportButton.js
-│   └── utils/
-│       ├── passwordStrength.js
-│       ├── wordlistPatterns.js
-│       └── fileExport.js
-└── public/
-    └── favicon.ico
-```
-
 ## Installation & Setup
 
 ```bash
