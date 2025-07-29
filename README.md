@@ -1,1 +1,100 @@
-# password-strength-analyzer
+# Password Strength Analyzer with Custom Wordlist Generator
+
+A comprehensive Next.js web application that analyzes password strength and generates custom wordlists for security testing purposes.
+
+## Features
+
+### Password Strength Analysis
+
+- Real-time password strength evaluation using zxcvbn
+- Custom entropy calculations
+- Visual feedback on password quality
+- Recommendations for improvement
+
+### Custom Wordlist Generation
+
+- Generate personalized wordlists based on user inputs
+- Include common patterns like leetspeak transformations
+- Append years, numbers, and special characters
+- Export wordlists in .txt format for security tools
+
+### User Input Categories
+
+- Personal information (names, dates, pets)
+- Common password patterns
+- Custom word combinations
+- Automatic pattern variations
+
+## Tech Stack
+
+- **Frontend:** Next.js 14 with React
+- **Styling:** Tailwind CSS
+- **Password Analysis:** zxcvbn library
+- **File Export:** Browser download API
+- **Pattern Generation:** Custom algorithms
+
+## Project Structure
+
+```
+project/
+├── README.md
+├── package.json
+├── next.config.js
+├── tailwind.config.js
+├── src/
+│   ├── app/
+│   │   ├── layout.js
+│   │   ├── page.js
+│   │   └── globals.css
+│   ├── components/
+│   │   ├── PasswordAnalyzer.js
+│   │   ├── WordlistGenerator.js
+│   │   └── ExportButton.js
+│   └── utils/
+│       ├── passwordStrength.js
+│       ├── wordlistPatterns.js
+│       └── fileExport.js
+└── public/
+    └── favicon.ico
+```
+
+## Installation & Setup
+
+```bash
+# Clone and navigate to project
+cd project
+
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## Usage
+
+1. **Password Analysis:**
+
+   - Enter password in the analyzer
+   - View real-time strength feedback
+   - Get recommendations for improvement
+
+2. **Wordlist Generation:**
+   - Input personal information (names, dates, pets)
+   - Select pattern variations (leetspeak, years)
+   - Generate custom wordlist
+   - Export as .txt file
+
+## Security Note
+
+This tool is designed for educational and authorized security testing purposes only. Use responsibly and only on systems you own or have explicit permission to test.
+
+## Learning Outcomes
+
+- Password security best practices
+- Wordlist attack methodologies
+- Web application development with Next.js
+- Client-side security tool development
