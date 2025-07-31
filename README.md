@@ -2,6 +2,12 @@
 
 A comprehensive Next.js web application that analyzes password strength and generates custom wordlists for security testing purposes.
 
+---
+
+### Live preview: [Password Strength Analyzer](https://password-strength-analyzer-tool.vercel.app/)
+
+---
+
 ## Features
 
 ### Password Strength Analysis
@@ -67,11 +73,11 @@ npm run build
 
 This tool is designed for educational and authorized security testing purposes only. Use responsibly and only on systems you own or have explicit permission to test.
 
-## Learning Outcomes
+## Outcomes
 
 - Password security best practices
 - Wordlist attack methodologies
 - Web application development with Next.js
 - Client-side security tool development
 
-### This is the final project that I made as part of my [internship](https://github.com/aditya8Raj/elevate-labs-internship) at [Elevate Labs](https://www.linkedin.com/company/bebwwijwi/).
+### This is the final project that I made as part of my cybersecurity [internship](https://github.com/aditya8Raj/elevate-labs-internship) at [Elevate Labs](https://www.linkedin.com/company/bebwwijwi/).
