@@ -1,24 +1,24 @@
-// File export utilities for browser download
+// file export utilities for browser download
 
 export function exportToFile(wordlist, filename = "wordlist.txt") {
   try {
-    // Create file content
+    // to create file content
     const content = wordlist.join("\n");
 
-    // Create blob
+    // to create blob
     const blob = new Blob([content], { type: "text/plain" });
 
-    // Create download link
+    // to create download link
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
     link.download = filename;
 
-    // Trigger download
+    // to trigger download
     document.body.appendChild(link);
     link.click();
 
-    // Cleanup
+    // to cleanup
     document.body.removeChild(link);
     window.URL.revokeObjectURL(url);
 
@@ -40,7 +40,7 @@ export function exportPasswordAnalysis(
       passwordLength: password.length,
       analysis: {
         ...analysis,
-        // Don't include the actual password in export for security
+        // don't put the actual password in export for security
         password: "[REDACTED]",
       },
     };

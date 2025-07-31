@@ -1,22 +1,22 @@
-// Password strength analysis utilities
-// Using zxcvbn for comprehensive analysis with custom entropy calculations
+// password strength analysis utilities
+// using zxcvbn for comprehensive and detailed analysis with custom entropy calculations
 
 export function analyzePassword(password) {
   if (!password) return null;
 
-  // Basic character set analysis
+  // basic character set analysis
   const hasLowercase = /[a-z]/.test(password);
   const hasUppercase = /[A-Z]/.test(password);
   const hasNumbers = /\d/.test(password);
   const hasSymbols = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~`]/.test(password);
 
-  // Calculate entropy
+  // to calculate entropy
   const entropy = calculateEntropy(password);
 
-  // Pattern detection
+  // pattern detection
   const patterns = detectPatterns(password);
 
-  // Calculate score (0-4)
+  // calculating score (0-4)
   let score = 0;
   if (password.length >= 8) score++;
   if (password.length >= 12) score++;
@@ -26,10 +26,10 @@ export function analyzePassword(password) {
   if (entropy > 60) score++;
   if (patterns.length === 0) score++;
 
-  // Cap at 4
+  // cap at 4
   score = Math.min(score, 4);
 
-  // Generate suggestions
+  // to generate suggestions
   const suggestions = generateSuggestions(
     password,
     hasLowercase,
@@ -38,10 +38,10 @@ export function analyzePassword(password) {
     hasSymbols
   );
 
-  // Generate warnings
+  // to generate warnings
   const warning = generateWarnings(password, patterns);
 
-  // Estimate crack time
+  // to estimate crack time
   const crackTime = estimateCrackTime(entropy);
 
   return {
@@ -73,18 +73,18 @@ function calculateEntropy(password) {
 function detectPatterns(password) {
   const patterns = [];
 
-  // Common patterns
+  // common patterns
   if (/123/.test(password)) patterns.push("Sequential numbers");
   if (/abc/i.test(password)) patterns.push("Sequential letters");
   if (/qwerty/i.test(password)) patterns.push("Keyboard pattern");
   if (/password/i.test(password)) patterns.push('Contains "password"');
   if (/admin/i.test(password)) patterns.push('Contains "admin"');
 
-  // Repetitive patterns
+  // repetitive patterns
   if (/(.)\1{2,}/.test(password)) patterns.push("Repeated characters");
   if (/(\d{4})/.test(password)) patterns.push("4-digit year pattern");
 
-  // Date patterns
+  // date patterns
   if (/\d{1,2}[\/\-]\d{1,2}[\/\-]\d{2,4}/.test(password))
     patterns.push("Date pattern");
 

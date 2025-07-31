@@ -68,7 +68,7 @@ export default function WordlistGenerator() {
 
   return (
     <div className="space-y-6">
-      {/* Input Fields */}
+      {/* user input fields */}
       <div className="space-y-4">
         <h3 className="font-medium text-gray-800">Personal Information</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -124,7 +124,7 @@ export default function WordlistGenerator() {
         />
       </div>
 
-      {/* Options */}
+      {/* options for wordlist generation */}
       <div className="space-y-4">
         <h3 className="font-medium text-gray-800">Generation Options</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -207,7 +207,7 @@ export default function WordlistGenerator() {
         </div>
       </div>
 
-      {/* Action Buttons */}
+      {/* buttons */}
       <div className="flex flex-wrap gap-3">
         <button
           onClick={generateWordlistHandler}
@@ -228,7 +228,7 @@ export default function WordlistGenerator() {
         )}
       </div>
 
-      {/* Results Preview */}
+      {/* generated wordlist preview*/}
       {generatedWords.length > 0 && (
         <div className="bg-gray-50 rounded-md p-4">
           <div className="flex justify-between items-center mb-3">
@@ -253,7 +253,7 @@ export default function WordlistGenerator() {
         </div>
       )}
 
-      {/* Empty State */}
+      {/* empty state - when there is no user's input*/}
       {generatedWords.length === 0 && (
         <div className="text-center py-8 text-gray-500">
           <div className="text-4xl mb-2">📝</div>

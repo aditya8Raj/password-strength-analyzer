@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="max-w-6xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Password Analyzer Section */}
+        {/* --------- Password Analyzer here ----------*/}
         <div className="space-y-6">
           <div className="card">
             <h2 className="text-2xl font-semibold mb-4 text-gray-800">
@@ -17,7 +17,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Wordlist Generator Section */}
+        {/* ------- Wordlist Generator here ------- */}
         <div className="space-y-6">
           <div className="card">
             <h2 className="text-2xl font-semibold mb-4 text-gray-800">
@@ -28,7 +28,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Educational Section */}
+      {/* -------- Educational Section here -------- */}
       <div className="card mt-8">
         <h2 className="text-2xl font-semibold mb-4 text-gray-800">
           About This Tool

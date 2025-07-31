@@ -1,17 +1,17 @@
-// Wordlist generation utilities with various transformation patterns
+// wordlist generation utilities with various transformation patterns
 
 export function generateWordlist(inputs, options) {
   const baseWords = extractBaseWords(inputs);
   let wordlist = new Set();
 
-  // Add base words
+  // add base words
   baseWords.forEach((word) => {
     if (word.length >= options.minLength && word.length <= options.maxLength) {
       wordlist.add(word);
     }
   });
 
-  // Apply transformations
+  // applying transformations
   const transformations = [];
 
   if (options.includeLeetspeak) {
@@ -22,7 +22,7 @@ export function generateWordlist(inputs, options) {
     transformations.push(reverseWord);
   }
 
-  // Apply transformations to base words
+  // applying transformations to base words
   baseWords.forEach((word) => {
     transformations.forEach((transform) => {
       const transformed = transform(word);
@@ -35,7 +35,7 @@ export function generateWordlist(inputs, options) {
     });
   });
 
-  // Add year combinations
+  // to add year combinations
   if (options.includeYears) {
     const wordsWithYears = addYearCombinations([...wordlist]);
     wordsWithYears.forEach((word) => {
@@ -48,7 +48,7 @@ export function generateWordlist(inputs, options) {
     });
   }
 
-  // Add common suffixes
+  // to add common suffixes
   if (options.includeCommonSuffixes) {
     const wordsWithSuffixes = addCommonSuffixes([...wordlist]);
     wordsWithSuffixes.forEach((word) => {
@@ -61,30 +61,30 @@ export function generateWordlist(inputs, options) {
     });
   }
 
-  // Convert to array and sort
+  // to convert to array and sort
   return Array.from(wordlist).sort();
 }
 
 function extractBaseWords(inputs) {
   const words = [];
 
-  // Extract individual inputs
+  // to extract individual inputs
   if (inputs.name) words.push(inputs.name.toLowerCase().trim());
   if (inputs.surname) words.push(inputs.surname.toLowerCase().trim());
   if (inputs.nickname) words.push(inputs.nickname.toLowerCase().trim());
   if (inputs.pet) words.push(inputs.pet.toLowerCase().trim());
   if (inputs.company) words.push(inputs.company.toLowerCase().trim());
 
-  // Add birth year
+  // for birth year feild
   if (inputs.birthYear) {
     words.push(inputs.birthYear);
-    // Add short year version
+    // short year version
     if (inputs.birthYear.length === 4) {
       words.push(inputs.birthYear.slice(-2));
     }
   }
 
-  // Process custom words
+  // to process custom words
   if (inputs.customWords) {
     const customList = inputs.customWords
       .split(",")
@@ -93,15 +93,15 @@ function extractBaseWords(inputs) {
     words.push(...customList);
   }
 
-  // Add combinations
+  // adding combinations
   const combinations = generateCombinations(words);
   words.push(...combinations);
 
-  // Add capitalized versions
+  // add capitalized versions
   const capitalizedWords = words.map((word) => capitalizeWord(word));
   words.push(...capitalizedWords);
 
-  // Remove duplicates and empty strings
+  // for removeing duplicates and empty strings
   return [...new Set(words.filter((word) => word && word.length > 0))];
 }
 
@@ -111,7 +111,7 @@ function generateCombinations(words) {
     (word) => word && word.length > 0 && word.length < 10
   );
 
-  // Two-word combinations
+  // two-word combinations
   for (let i = 0; i < validWords.length; i++) {
     for (let j = i + 1; j < validWords.length; j++) {
       combinations.push(validWords[i] + validWords[j]);

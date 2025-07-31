@@ -41,7 +41,7 @@ export default function PasswordAnalyzer() {
 
   return (
     <div className="space-y-4">
-      {/* Password Input */}
+      {/* user password Input */}
       <div className="relative">
         <label className="block text-sm font-medium text-gray-700 mb-2">
           Enter Password to Analyze
@@ -64,10 +64,10 @@ export default function PasswordAnalyzer() {
         </div>
       </div>
 
-      {/* Analysis Results */}
+      {/* analysis results logic */}
       {analysis && (
         <div className="space-y-4">
-          {/* Strength Meter */}
+          {/* strength meter will change as per the user's input */}
           <div>
             <div className="flex justify-between items-center mb-2">
               <span className="text-sm font-medium text-gray-700">
@@ -95,7 +95,7 @@ export default function PasswordAnalyzer() {
             </div>
           </div>
 
-          {/* Detailed Metrics */}
+          {/* detailed metrics */}
           <div className="grid grid-cols-2 gap-4 text-sm">
             <div className="space-y-2">
               <div className="flex justify-between">
@@ -149,7 +149,7 @@ export default function PasswordAnalyzer() {
             </div>
           </div>
 
-          {/* Recommendations */}
+          {/* security suggestions for user */}
           {analysis.suggestions && analysis.suggestions.length > 0 && (
             <div className="bg-blue-50 border border-blue-200 rounded-md p-3">
               <h4 className="font-medium text-blue-800 mb-2">
@@ -163,7 +163,7 @@ export default function PasswordAnalyzer() {
             </div>
           )}
 
-          {/* Warnings */}
+          {/* security warnings as per user's input */}
           {analysis.warning && (
             <div className="bg-red-50 border border-red-200 rounded-md p-3">
               <h4 className="font-medium text-red-800 mb-2">
@@ -175,7 +175,7 @@ export default function PasswordAnalyzer() {
         </div>
       )}
 
-      {/* Empty State */}
+      {/* empty state - when there is no user's input */}
       {!password && (
         <div className="text-center py-8 text-gray-500">
           <div className="text-4xl mb-2">🔐</div>
